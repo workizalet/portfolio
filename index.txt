@@ -2,7 +2,7 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
+alt = Jose Carlos Arkizalet
 Richard hanrick
 Web developer
 
