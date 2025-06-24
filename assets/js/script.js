@@ -82,7 +82,7 @@ const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
 
-    if (selectedValue === "all") {
+    if (selectedValue === "todos") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
       filterItems[i].classList.add("active");
@@ -156,4 +156,144 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
+
+  
 }
+
+// document.addEventListener( 'DOMContentLoaded', function () {
+//     new Splide( '#image-carousel' ).mount();
+//   } );
+
+//   document.addEventListener( 'DOMContentLoaded', function () {
+//   new Splide( '#fullscreen-carousel', {
+// 		width : '100vw',
+// 		height: '100vh',
+//   } ).mount();
+// } );
+
+// document.addEventListener( 'DOMContentLoaded', function () {
+//   new Splide( '#thumbnail-carousel', {
+// 		fixedWidth : 100,
+//     fixedHeight: 60,
+// 		gap        : 10,
+// 		rewind     : true,
+// 		pagination : false,
+//   } ).mount();
+// } );
+
+
+// new Splide( '.splide', {
+//   type    : 'loop',
+//   autoplay: 'pause',
+//   perPage : 3,
+// } );
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Configuración del carrusel principal
+    var main = new Splide( '#main-carousel', {
+        type        : 'fade',
+        rewind      : true,
+        heightRatio: 0.5, // esto controla la relación alto/ancho
+        pagination  : false,
+        arrows      : false,
+        cover: false, // importante: NO cubrir
+        
+    });
+
+    // Configuración del carrusel de miniaturas
+    var thumbnails = new Splide( '#thumbnail-carousel', {
+        gap         : 10,
+        rewind      : true,
+        pagination  : false,
+        isNavigation: true,
+        perMove     : 1,
+        focus       : 'center',
+        breakpoints : {
+          2048: {
+                perPage: 5,
+                 fixedWidth: 120,
+                 fixedHeight: 70,
+            },
+            992: {
+                perPage: 4,
+                 fixedWidth: 120,
+                 fixedHeight: 70,
+            },
+            768: {
+                perPage: 3,
+                 fixedWidth: 100,
+                 fixedHeight: 60,
+            },
+            600: {
+                perPage: 2,
+                 fixedWidth: 100,
+                 fixedHeight: 60,
+                // gap: 5,
+            },
+            // 480: {
+            //     perPage: 1, 
+            //     fixedWidth: 80,
+            //      fixedHeight: 47,
+            // },
+        },
+    });
+
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
+
+
+    // Configuración del carrusel principal
+    var main2 = new Splide( '#main-carousel2', {
+        type        : 'fade',
+        rewind      : true,
+        heightRatio: 0.5, // esto controla la relación alto/ancho
+        pagination  : false,
+        arrows      : false,
+        cover: false, // importante: NO cubrir
+        
+    });
+
+    // Configuración del carrusel de miniaturas
+    var thumbnails2 = new Splide( '#thumbnail-carousel2', {
+        gap         : 10,
+        rewind      : true,
+        pagination  : false,
+        isNavigation: true,
+        perMove     : 1,
+        focus       : 'center',
+        breakpoints : {
+          2048: {
+                perPage: 5,
+                 fixedWidth: 120,
+                 fixedHeight: 70,
+            },
+            992: {
+                perPage: 4,
+                 fixedWidth: 120,
+                 fixedHeight: 70,
+            },
+            768: {
+                perPage: 3,
+                 fixedWidth: 100,
+                 fixedHeight: 60,
+            },
+            600: {
+                perPage: 2,
+                 fixedWidth: 100,
+                 fixedHeight: 60,
+                // gap: 5,
+            },
+            // 480: {
+            //     perPage: 1, 
+            //     fixedWidth: 80,
+            //      fixedHeight: 47,
+            // },
+        },
+    });
+
+    main2.sync( thumbnails2 );
+    main2.mount();
+    thumbnails2.mount();
+});

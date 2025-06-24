@@ -2,8 +2,8 @@ vCard - Personal Portfolio
 
 # sidebar
 
-alt = Jose Carlos Arkizalet
-Jose Carlos Arkizalet
+alt = Richard hanrick
+Richard hanrick
 Web developer
 
 Show Contacts
